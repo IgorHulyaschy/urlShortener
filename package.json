@@ -1,0 +1,41 @@
+{
+  "name": "userway",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint --init",
+    "serve": "nodemon ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorHulyaschy/urlShortener.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorHulyaschy/urlShortener/issues"
+  },
+  "homepage": "https://github.com/IgorHulyaschy/urlShortener#readme",
+  "dependencies": {
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-joi-router": "^8.0.0",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "koa2-swagger-ui": "^5.2.0",
+    "pg": "^8.7.1",
+    "shortid": "^2.2.16",
+    "typeorm": "^0.2.37",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "config": "^3.3.6",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "nodemon": "^2.0.12"
+  }
+}
