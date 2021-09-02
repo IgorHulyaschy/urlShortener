@@ -4,9 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "eslint": "eslint --init",
-    "serve": "nodemon ./src/app.js"
+    "serve": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,6 @@
     "koa2-swagger-ui": "^5.2.0",
     "pg": "^8.7.1",
     "shortid": "^2.2.16",
-    "typeorm": "^0.2.37",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
@@ -36,6 +36,9 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
-    "nodemon": "^2.0.12"
+    "jest": "^27.1.0",
+    "monk": "^7.3.4",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.6"
   }
 }

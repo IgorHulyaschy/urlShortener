@@ -25,6 +25,8 @@ app.use(bodyParser());
 router.use("/", require("./url/router"));
 app.use(router.middleware());
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
+
+module.exports = app;
