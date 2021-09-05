@@ -5,18 +5,19 @@ class Url {
     this.longUrl = db.long_url;
     this.shortUrl = db.short_url;
   }
+
   getShortUrl() {
     const responseData = {
       shortUrl: this.shortUrl,
-    }
+    };
     return responseData;
   }
 
   getUrl() {
     const responseData = {
-      longUrl: this.longUrl, 
-    }
+      longUrl: this.longUrl,
+    };
     return responseData;
   }
 }
-module.exports = { Url }
+module.exports = { Url };
