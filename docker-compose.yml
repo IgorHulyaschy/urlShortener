@@ -1,12 +1,8 @@
 version: '3.4'
 services:
   app:
-    image: urlShortener
-    command: ${COMMAND:-npm run dev-with-docker}
-    build:
-      target: build
-      context: ./
-      dockerfile: Dockerfile
+    image: urlshortener
+    build: ./
     user: 'root:root'
     ports:
       - 3000:3000
@@ -28,3 +24,4 @@ services:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_HOST: ${DB_HOST}
