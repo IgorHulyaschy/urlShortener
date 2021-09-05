@@ -1,14 +1,14 @@
-const Pool = require("pg").Pool;
-const config = require("config");
+const { Pool } = require('pg');
+const config = require('config');
 
 class Database {
   constructor() {
     this.config = {
-      user: config.get("database.user"),
-      host: config.get("database.host"),
-      database: config.get("database.dbName"),
-      password: config.get("database.password"),
-      port: config.get("database.port"),
+      user: config.get('database.user'),
+      host: config.get('database.host'),
+      database: config.get('database.dbName'),
+      password: config.get('database.password'),
+      port: config.get('database.port'),
     };
 
     this.pool = new Pool(this.config);
