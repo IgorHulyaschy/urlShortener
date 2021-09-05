@@ -1,26 +1,30 @@
-version: '3'
-
+version: '3.4'
 services:
-  nodejs:
+  app:
+    image: urlShortener
+    command: ${COMMAND:-npm run dev-with-docker}
     build:
-      context: .
+      target: build
+      context: ./
       dockerfile: Dockerfile
-    image: userway
-    container_name: userway
-    restart: unless-stopped
-    env_file: .env
-    environment:
-      - SERVER_PORT=$SERVER_PORT
-      - SERVER_BASEURL=$SERVER_BASEURL
-      - DB_HOST=$DB_HOST
-      - DB_USER=$DB_USER
-      - DB_PASS=$DB_PASS
-      - DB_PORT=$DB_PORT
-      - DB_NAME=$DB_NAME
+    user: 'root:root'
     ports:
-      - "80:8080"
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    networks:
-      - app-network
+      - 3000:3000
+    depends_on:
+      - pg
+    environment:
+      SERVER_PORT: ${SERVER_PORT}
+      SERVER_BASEURL: ${SERVER_BASEURL}
+      DB_PASS: ${DB_PASS}
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PORT: ${DB_PORT}
+  pg:
+    image: postgres:11.9
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
