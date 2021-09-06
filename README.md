@@ -7,7 +7,7 @@ npm i
     <li>SERVER_PORT=3000</li>
     <li>SERVER_BASEURL=http://localhost:3000</li>
     <li>DB_USER</li>
-    <li>DB_HOST</li>
+    <li>DB_HOST=host.docker.internal</li>
     <li>DB_NAME</li>
     <li>DB_PASS</li>
     <li>DB_PORT</li>
